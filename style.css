@@ -1,0 +1,22 @@
+html {
+  height: 100%;
+  width: 100%;
+  background-color: pink;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+body h1 {
+  text-align: center;
+  background-color: purple;
+  color: white;
+}
+
+body img {
+  height: 100%;
+  width: 20%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
