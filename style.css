@@ -11,12 +11,91 @@ body h1 {
   text-align: center;
   background-color: purple;
   color: white;
+  padding: 1rem;
+  border-radius: 3rem;
 }
 
-body img {
-  height: 100%;
-  width: 20%;
+
+.image-grid-container {
+  display: flex;
+  justify-content: center; /* Center the grid and ad */
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  max-width: 80%; /* Keep grid max width to allow space for ads */
+  margin: 1rem auto;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.ad-column {
+  width: 15%; /* Reserve space for ad column */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+img {
+  height: 200px; /* Set a fixed height for all images */
+  width: 100%; /* Images will stretch to fill the container width */
+  object-fit: cover; /* Ensure the images fill the set dimensions while maintaining aspect ratio */
+  margin: 1rem auto;
+  border-radius: 5%;
+}
+
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%; /* On small screens, make the grid take full width */
+  }
+}
+
+html body a {
+  text-decoration: none;
+  color: white;
   display: block;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 10px;
+  width: fit-content;
   margin-left: auto;
   margin-right: auto;
+  background-color: purple;
+}
+html body button {
+  text-decoration: none;
+  color: white;
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 10px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: purple;
+  border-color: purple;
+  box-shadow: none;
+  outline-width: 0;
+  border-width: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+body h3 {
+  padding: 4rem;
 }
