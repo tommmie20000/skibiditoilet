@@ -48,9 +48,14 @@
   
 
   <!-- Centered and larger image -->
-    <div class="image-container">
-      <img class="image" src="download.jpeg" alt="Download Image">
-    </div>
+    
+<div class="image-container">
+    <img id="triggerImage" class="image" src="download.jpeg" alt="Yipeee!!">
+</div>
+
+<div id="imageOverlay">
+  <img src="baby.jpg" id="fullScreenImage" alt="Full Screen Image">
+</div>
 
   <style>
     .billboard {
@@ -91,10 +96,88 @@
     transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg) scale(0.75);
   }
 }
+    
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 
+/* Image container styles */
+.image-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.image {
+    width: 50%;
+    height: 50%;
+    cursor: pointer; /* Makes the image look clickable */
+}
+
+/* Full-screen overlay */
+#imageOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8); /* Dark background */
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1s ease-in-out; /* Transition for fade effect */
+}
+
+#imageOverlay img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Ensures the image covers the whole screen */
+}
+
+.fade-out {
+    opacity: 0; /* Makes the element invisible */
+}
 
   </style>
-    
+
+<audio id="triggerSound" src="femur.mp3"></audio>
+
+    <script>
+// script.js
+document.getElementById('triggerImage').addEventListener('click', function() {
+    const imageOverlay = document.getElementById('imageOverlay');
+    triggerSound.play();
+    // Show the overlay
+    imageOverlay.style.display = 'block';
+    imageOverlay.classList.remove('fade-out');
+
+    // Start fading after 5 seconds
+    setTimeout(function() {
+        imageOverlay.classList.add('fade-out');
+
+        // Hide the overlay completely after the fade effect (1s fade time)
+        setTimeout(function() {
+            imageOverlay.style.display = 'none';
+        }, 1000); // Wait for the fade-out transition to complete
+    }, 3500); // 3 seconds delay before starting to fade
+});
+
+// Hide the image when clicking outside of the image (optional)
+document.getElementById('imageOverlay').addEventListener('click', function(event) {
+    if (event.target.id === 'imageOverlay') {
+        document.getElementById('imageOverlay').style.display = 'none';
+    }
+});
+
+
+    </script>
+
+
+
   
 </body>
 </html>
