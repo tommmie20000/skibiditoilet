@@ -9,6 +9,7 @@
     body {
       margin: 0;
       background-color: #182758; /* Dark background for contrast */
+      
     }
   
     .billboard {
@@ -143,6 +144,23 @@
 .fade-out {
     opacity: 0; /* Makes the element invisible */
 }
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  display: none; /* This hides the scrollbar */
+}
+
+/* Hide scrollbar in Firefox */
+* {
+  scrollbar-width: none; /* This hides the scrollbar in Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+/* Ensure scrolling still works */
+html, body {
+  overflow: auto; /* Make sure overflow is set to auto to enable scrolling */
+}
+
 
   </style>
 
