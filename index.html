@@ -33,22 +33,22 @@
       color: white;
       font-size: 2rem; /* Adjust font size as needed */
       font-weight: bold;
-      animation: scroll 100s linear infinite; /* Adjust timing as needed */
+      animation: scroll 15s linear infinite; /* Adjust timing as needed */
     }
   
     @keyframes scroll {
       0% {
-        transform: translateX(55%) ; /* Start off-screen to the right */
+        transform: translateX(130%) ; /* Start off-screen to the right */
       }
       100% {
-        transform: translateX(calc(-55% - 2rem)); /* Move off-screen to the left and add 2rem gap */
+        transform: translateX(calc(-130% - 2rem)); /* Move off-screen to the left and add 2rem gap */
       }
     }
   </style>
   
   <body>
     <div class="billboard">
-      <div class="text">Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi Skibidi </div>
+      <img class="text" src="text.png" alt="text">
     </div>
   </body>
   
@@ -67,6 +67,11 @@
 </div>
 
   <style>
+
+    .text {
+      align-items: center;
+    }
+
     .billboard {
       text-align: center;
       margin-bottom: 20px;
@@ -171,7 +176,6 @@ html, body {
   </style>
 
 <audio id="triggerSound" src="femur.mp3"></audio>
-
 
     <script>
 // script.js
